@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import { About as AboutSection } from "@/components/About";
 import { Footer } from "@/components/Footer";
@@ -32,10 +31,7 @@ const About = () => {
             <div className="mb-5 md:mb-6 bg-white/5 backdrop-blur-md rounded-xl p-4 md:p-6 border border-white/10">
               <h2 className="text-xl md:text-2xl font-bold text-mediarch mb-3">Our Mission</h2>
               <p className="text-sm md:text-base text-gray-300">
-                Our mission is to empower aspiring and professional streamers by offering tailored support, 
-                mentorship, and resources to enhance their journey. Through structured learning, industry 
-                insights, and hands-on guidance, we strive to build a thriving community that excels in 
-                digital broadcasting.
+                At Mediarch, our mission is to empower creators at every step of their journey. We understand the challenges they face—whether it's breaking into the industry, refining their skills, or overcoming societal barriers. That's why we provide expert mentorship, 24/7 support, and hands-on guidance to help them navigate the world of content creation. From their first stream to building a lasting brand, we are committed to bridging the gap and ensuring every creator has the tools and knowledge to succeed.
               </p>
             </div>
             
@@ -48,9 +44,16 @@ const About = () => {
               </p>
               <div className="flex justify-center">
                 <Button 
+                  asChild
                   className="bg-mediarch text-black hover:bg-mediarch/90 text-sm md:text-base"
                 >
-                  Join Our Community
+                  <a
+                    href="http://discord.gg/adeft"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Join Our Community
+                  </a>
                 </Button>
               </div>
             </div>

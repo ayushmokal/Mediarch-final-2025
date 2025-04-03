@@ -25,7 +25,7 @@ export function Creators() {
               and join our community of creators
             </p>
             <p className="text-lg sm:text-xl font-semibold text-mediarch">
-              making waves in the gaming industry
+              making waves in the content industry
             </p>
           </div>
           

@@ -41,7 +41,7 @@ export function About() {
                 About Mediarch
               </h2>
               <p className="text-lg text-gray-300">
-                At Mediarch, we're redefining the streaming landscape by combining expert mentorship, 24/7 support, and immersive events. Our platform bridges the gap between aspiring creators and professional streamers, empowering them with the skills and tools to succeed. 🚀
+                At Mediarch, we recognized a critical gap between content creators and the content creation process one that left many aspiring talents struggling to break through, often due to the lack of support from their households. We saw the challenges, the lack of guidance, and the need for real opportunities. That's why we set out to bridge this gap. By combining expert mentorship, 24/7 support, and immersive events, we're not just redefining the streaming landscape—we're empowering creators with the skills, connections, and tools they need to thrive, regardless of societal limitations. 🚀
               </p>
             </div>
             

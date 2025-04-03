@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Facebook, Instagram, Twitter, Youtube, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
+import { FooterLinks } from "./FooterLinks"; // Adjusted import path
+import { ChevronRight } from "lucide-react"; // Fixed missing import
 
 export function Footer() {
   const [email, setEmail] = useState("");
@@ -34,7 +35,7 @@ export function Footer() {
         .select();
         
       if (error) {
-        if (error.code === '23505') {
+        if (error.code === "23505") { // Fixed error code check
           toast({
             title: "Already Subscribed",
             description: "This email is already subscribed to our newsletter",
@@ -42,7 +43,7 @@ export function Footer() {
         } else {
           throw error;
         }
-      } else {
+      } else if (data) { // Ensure data exists
         toast({
           title: "Success!",
           description: "You've been subscribed to our newsletter",
@@ -75,13 +76,14 @@ export function Footer() {
               Bridging casual gaming and competitive esports through innovative tournaments, 
               skill development programs, and a vibrant community.
             </p>
-            
-            <div className="mt-6 flex space-x-4">
-              <SocialButton icon={<Facebook size={18} />} />
-              <SocialButton icon={<Twitter size={18} />} />
-              <SocialButton icon={<Instagram size={18} />} />
-              <SocialButton icon={<Youtube size={18} />} />
-            </div>
+            <a 
+              href="http://discord.gg/adeft" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="mt-4 inline-block rounded-md bg-mediarch px-4 py-2 text-sm font-semibold text-white hover:bg-mediarch-red"
+            >
+              Join Our Community
+            </a>
           </div>
           
           {/* Quick Links (Previously Platform) */}
@@ -94,6 +96,7 @@ export function Footer() {
                 { name: "Home", href: "/" },
                 { name: "About", href: "/about" },
                 { name: "Contact", href: "/contact" },
+                { name: "Discord", href: "http://discord.gg/adeft" },
               ]} 
             />
           </div>
@@ -170,30 +173,3 @@ export function Footer() {
   );
 }
 
-function SocialButton({ icon }: { icon: React.ReactNode }) {
-  return (
-    <a
-      href="#"
-      className="group flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/80 backdrop-blur-sm transition-colors hover:border-mediarch/30 hover:bg-white/10 hover:text-mediarch"
-    >
-      {icon}
-    </a>
-  );
-}
-
-function FooterLinks({ links }: { links: { name: string; href: string }[] }) {
-  return (
-    <ul className="space-y-3">
-      {links.map((link) => (
-        <li key={link.name}>
-          <a
-            href={link.href}
-            className="text-sm text-gray-300 transition-colors hover:text-mediarch"
-          >
-            {link.name}
-          </a>
-        </li>
-      ))}
-    </ul>
-  );
-}
