@@ -73,8 +73,7 @@ export function Footer() {
           <div className="md:col-span-2">
             <h2 className="text-2xl font-bold text-mediarch">MEDIARCH</h2>
             <p className="mt-4 max-w-md text-sm text-gray-400">
-              Bridging casual gaming and competitive esports through innovative tournaments, 
-              skill development programs, and a vibrant community.
+              Connect with top industry experts, mentors, and a vibrant community to accelerate your growth and success.
             </p>
             <a 
               href="http://discord.gg/adeft" 
